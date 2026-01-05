@@ -5,7 +5,7 @@ This project explores whether satellite imagery provides additional predictive s
 The primary goal is not only accuracy, but also interpretability and understanding what visual cues (e.g., greenery, water proximity, neighborhood layout) influence model predictions.
 
 ### Important
-
+Before running any model, you must fetch the images using data_fetcher.py as they're too large to be uploaded\
 I saved all the .ipynb files with their outputs, so you can check out epoch-wise metrics. Also do care to check the file paths (although I adjusted them mostly) if running any script.\
 Download the best model checkpoints from here - [Huggingface Repository](https://huggingface.co/d3nji/Satellite-Imagery-Based-Property-Valuation/tree/main)
 
