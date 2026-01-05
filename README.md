@@ -5,4 +5,4 @@ This project explores whether satellite imagery provides additional predictive s
 The primary goal is not only accuracy, but also interpretability — understanding what visual cues (e.g., greenery, water proximity, neighborhood layout) influence model predictions.
 
 ### Project structure
-(/misc/project_str.png)
+![File Structure](/misc/project_str.png)
