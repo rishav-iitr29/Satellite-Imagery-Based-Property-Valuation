@@ -2,11 +2,12 @@
 ### Overview
 
 This project explores whether satellite imagery provides additional predictive signal beyond traditional tabular features for residential property valuation. Using a combination of structured housing attributes and overhead satellite images, we build and evaluate multimodal regression models to predict house prices.  
-The primary goal is not only accuracy, but also interpretability — understanding what visual cues (e.g., greenery, water proximity, neighborhood layout) influence model predictions.
+The primary goal is not only accuracy, but also interpretability and understanding what visual cues (e.g., greenery, water proximity, neighborhood layout) influence model predictions.
 
 ### Important
 
-I saved all the .ipynb files with their outputs, so you can check out epoch-wise metrics. Also do care to check the file paths (although I adjusted them mostly) if running any script.
+I saved all the .ipynb files with their outputs, so you can check out epoch-wise metrics. Also do care to check the file paths (although I adjusted them mostly) if running any script.\
+Download the best model checkpoints from here - [Huggingface Repository](https://huggingface.co/d3nji/Satellite-Imagery-Based-Property-Valuation/tree/main)
 
 
 ### Project structure
@@ -15,15 +16,15 @@ I saved all the .ipynb files with their outputs, so you can check out epoch-wise
 ### Data Description
 
 #### Tabular Data
-	•	Source: Kaggle House Sales Dataset (King County)/
-	•	Key features:/
-	   •	price (target)/
-	   •	sqft_living, sqft_lot, bedrooms, bathrooms/
-	   •	sqft_living15, sqft_lot15 (neighborhood density)/
-     •	grade, condition, view, waterfront/
-	   •	latitude, longitude//
+	•	Source: Kaggle House Sales Dataset (King County)
+	•	Key features:
+	   •	price (target)
+	   •	sqft_living, sqft_lot, bedrooms, bathrooms
+	   •	sqft_living15, sqft_lot15 (neighborhood density)
+     •	grade, condition, view, waterfront
+	   •	latitude, longitude
 
-The target variable is log-transformed (log(price + 1)) to address right-skew and stabilize training./
+The target variable is log-transformed (log(price + 1)) to address right-skew and stabilize training.
 
 #### Visual Data
 
@@ -32,12 +33,13 @@ Satellite images are fetched using latitude and longitude coordinates for each p
 
 ### Image Acquisition Pipeline
 
-Satellite imagery is downloaded using the Mapbox Static Images API.\
+Satellite imagery is downloaded using the Mapbox Static Images API.
 
-Key parameters:\
-	•	Zoom level: 18\
-	•	Resolution: 400 × 400\
-	•	Map style: Satellite\
+Key parameters:
+
+	•	Zoom level: 18
+	•	Resolution: 400 × 400
+	•	Map style: Satellite
 	•	Image format: PNG
 
 Images are later resized to 224 × 224 and normalized using ImageNet statistics before being fed into CNN models.
@@ -45,7 +47,7 @@ Images are later resized to 224 × 224 and normalized using ImageNet statistics 
 
 ### Modeling Approaches
 
-Three modeling strategies were explored:\
+Three modeling strategies were explored:
 
 1. Tabular Baseline (XGBoost)
 
@@ -76,7 +78,7 @@ These models were used for analysis and explainability, not as final predictors.
 
 ![result table](/misc/result_table.png)
 
-The multimodal Late Fusion model consistently outperformed the tabular baseline, demonstrating that satellite imagery adds measurable predictive value./
+The multimodal Late Fusion model consistently outperformed the tabular baseline, demonstrating that satellite imagery adds measurable predictive value.\
 (DO read the Report for detailed conclusions)
 
 ### Notes & Limitations
