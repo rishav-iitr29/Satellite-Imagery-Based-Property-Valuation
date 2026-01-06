@@ -60,7 +60,7 @@ A strong gradient-boosting model trained purely on structured features, serving 
 	•	Loss: Mean Squared Error (log-price)
 
 ##### Late Fusion Multimodal Architecture
-![Architecture Diagram](/misc/architecture_diagram.png)
+<img src="/misc/architecture_diagram.png" alt="Descriptive text" width="50%" />
 
 This model achieved the best overall performance and is used for final predictions.
 
